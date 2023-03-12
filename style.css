@@ -1,0 +1,230 @@
+/* -------------------- */
+/* custom properties    */
+/* -------------------- */
+
+:root {
+  /* colors */
+  --clr-400: hsl(0, 7%, 24%);
+  --clr-350: hsl(0, 92%, 68%);
+  --clr-300: 0, 36%, 70%;
+  --clr-200: hsl(0, 74%, 74%);
+  --clr-100: hsl(0, 0%, 100%);
+
+  /* gradients */
+  --gr1: 135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%);
+  --gr2: 135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%);
+  
+  /* font sizes */
+  --fs-200:	0.8125rem;
+  --fs-300:	0.875rem;
+  --fs-400:	1rem;
+  --fs-500:	1.25rem;
+  --fs-600:	2.5rem;
+  --fs-700:	4rem;
+  
+  /* font family */
+  --ff-serif: 'Josefin Sans', sans-serif;
+
+  /* font weights */
+  --fw-300: 300;
+  --fw-400: 400;
+  --fw-600: 600;
+}
+
+/* -------------------- */
+/* Reset                */
+/* -------------------- */
+
+/* box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* margins reset */
+body,
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+/* set the images */
+img,
+picture {
+  display: block;
+  margin-inline: auto;
+  max-width: 100%;
+}
+
+/* set up body */
+body {
+  font-family: var(--ff-serif);
+  color: hsl(var(--clr-300));
+  min-height: 100vh;
+}
+
+/* set up input */
+input {
+  font: inherit;
+  color: inherit;
+}
+input:focus {
+  outline: none;
+}
+
+/* set up button */
+button {
+  background: none;
+  border: none;
+}
+
+/* -------------------- */
+/* components           */
+/* -------------------- */
+.flex {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+.container {
+  margin-inline: 2rem;
+}
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+.card {
+  position: relative;
+  background: linear-gradient(var(--gr1));
+}
+.logo {
+  position: absolute;
+  width: 6.25rem;
+  top: 2rem;
+  left: 2rem;
+}
+.hero-image {
+  margin-top: 5.25rem;
+}
+.intro {
+  padding: 4rem 0 4.25rem;
+  text-align: center;
+}
+.intro__head {
+  font-size: var(--fs-600);
+  font-weight: var(--fw-300);
+  text-transform: uppercase;
+  letter-spacing: .675rem;
+  line-height: 2.625rem;
+  margin-bottom: 1rem;
+}
+.accent {
+  color: var(--clr-400);
+  font-weight: var(--fw-600);
+}
+.intro__text {
+  font-size: var(--fs-300);
+  font-weight: var(--fw-400);
+  line-height: 1.375rem;
+  margin-bottom: 2rem;
+}
+.hero__input {
+  width: 311px;
+  height: 48px;
+  justify-content: space-between;
+  font-size: var(--fs-300);
+  outline: 2px solid hsla(var(--clr-300), .5);
+  border-radius: 50px;
+  margin-inline: auto;
+  margin-bottom: .5rem;
+}
+.icon__arrow {
+  width: 64px;
+  height: 48px;
+  cursor: pointer;
+  border-radius: 4rem;
+  background: linear-gradient(var(--gr2));
+  box-shadow: 0px 10px 10px 6px hsla(var(--clr-300), .2);
+}
+.arrow {
+  scale: .4;
+}
+.email {
+  width: 70%;
+  border: none;
+  background: none;
+  padding-left: 2rem;
+  opacity: .75;
+}
+.icon__error {
+  display: none;
+  scale: .5;
+}
+.warning {
+  font-size: var(--fs-200);
+  color: transparent;
+  text-align: left;
+  padding-left: 1.5rem;
+}
+
+@media (min-width: 90rem) {
+  .card {
+    background-image: url(./assets/images/bg-pattern-desktop.svg);
+    background-position: top left;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  .main {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  .container {
+    margin: 0;
+    padding: 0 13.75rem 0 10.3125rem;
+  }
+  .logo {
+  width: 9.875rem;
+  top: 4.0625rem;
+  left: 10.3125rem;
+  }
+  .hero-image {
+    width: 610px;
+    height: 800px;
+    margin: 0;
+  }
+  .intro {
+    width: 830px;
+    text-align: left;
+    padding-top: 14.5rem;
+  }
+  .intro__head {
+    font-size: var(--fs-700);
+    line-height: 4.4375rem;
+    letter-spacing: 1.1rem;
+    margin-bottom: 1rem;
+  }
+  .intro__text {
+    font-size: var(--fs-400);
+    line-height: 1.75rem;
+    margin-bottom: 2.5rem;
+  }
+  .hero__input {
+    width: 445px;
+    height: 56px;
+  }
+  .accent {
+    font-weight: var(--fw-600);
+  }
+  .email {
+    font-size: var(--fs-400);
+  }
+  .icon__arrow {
+    width: 100px;
+    height: 56px;
+  }
+}
